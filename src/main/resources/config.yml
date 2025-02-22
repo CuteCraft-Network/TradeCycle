@@ -1,2 +1,2 @@
 button:
-  type: R  # default key when not configured
+  type: STICK  # u can use any valid Material name
