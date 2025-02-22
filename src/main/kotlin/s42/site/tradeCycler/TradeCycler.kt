@@ -10,7 +10,6 @@ import org.bukkit.plugin.java.JavaPlugin
 class TradeCycler : JavaPlugin(), Listener {
 
     override fun onEnable() {
-        saveDefaultConfig()
         Bukkit.getPluginManager().registerEvents(this, this)
     }
 
@@ -22,6 +21,10 @@ class TradeCycler : JavaPlugin(), Listener {
         if (entity !is Villager) return
         if (!player.isSneaking) return
 
+        if (!villagerHasJob(entity)) {
+            player.sendActionBar("§cCannot cycle trades - villager has no job!")
+            return
+        }
         if (hasBeenTraded(entity)) {
             player.sendActionBar("§cCannot cycle trades - villager has been traded with!")
             return
@@ -42,5 +45,9 @@ class TradeCycler : JavaPlugin(), Listener {
 
     private fun hasBeenTraded(villager: Villager): Boolean {
         return villager.recipes.any { it.uses > 0 }
+    }
+
+    private fun villagerHasJob(villager: Villager): Boolean {
+        return villager.profession != Villager.Profession.NONE
     }
 }

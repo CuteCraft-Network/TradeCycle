@@ -33,3 +33,4 @@ Its a MIT License more infos in the [LICENSE](LICENSE) file.
 ### Contributing
 
 Feel free to open a issue or a pull request, I will be happy to help you!
+
