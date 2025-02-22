@@ -3,7 +3,6 @@ package s42.site.tradeCycler
 import org.bukkit.entity.Villager
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
-import org.bukkit.event.inventory.InventoryClickEvent
 import org.bukkit.event.inventory.InventoryType
 import org.bukkit.event.player.PlayerSwapHandItemsEvent
 import org.bukkit.inventory.MerchantInventory
@@ -38,11 +37,11 @@ class TradeCycler : JavaPlugin(), Listener {
         event.isCancelled = true
 
         val merchantInv = inventory as MerchantInventory
-        val trader = merchantInv.trader
+        val trader = merchantInv.merchant
         if (trader !is Villager) return
 
         when {
-            !trader.hasTraded() -> {
+            !trader.isTrading -> {
                 trader.recipes.shuffle()
                 player.sendMessage("§aTrades cycled!")
                 player.closeInventory()
