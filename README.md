@@ -1,4 +1,4 @@
-# Trade Cycling
+# Trade Cycle
 
 ### This Paper plugin is inspired by the mod [Trade Cycling](https://modrinth.com/mod/trade-cycling)
 
