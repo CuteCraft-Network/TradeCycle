@@ -1,5 +1,0 @@
-name: tradeCycler
-version: "${version}"
-main: s42.site.tradeCycler.TradeCycler
-api-version: '1.21.4'
-description: Cycles villager trades when pressed a configured button.

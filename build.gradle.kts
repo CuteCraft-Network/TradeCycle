@@ -1,9 +1,10 @@
 plugins {
-    id("org.jetbrains.kotlin.jvm") version "1.9.22"
+    kotlin("jvm").version(libs.versions.jvm)
+    alias(libs.plugins.shadow)
 }
 
-group = "s42.site"
-version = "1.1-SNAPSHOT"
+group = "tr.s42.tradecycler"
+version = "1.2-SNAPSHOT"
 
 repositories {
     mavenCentral()
@@ -14,21 +15,23 @@ repositories {
 }
 
 dependencies {
-    implementation(kotlin("stdlib"))
-    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-    compileOnly("io.papermc.paper:paper-api:1.21.4-R0.1-SNAPSHOT")
+    implementation(libs.stdlib)
+    implementation(libs.boosted.yaml)
+    compileOnly(libs.paper)
 }
 
 tasks {
-    processResources {
-        filesMatching("plugin.yml") { expand("version" to project.version) }
-    }
-    jar {
-        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-        archiveFileName.set("${rootProject.name}-${project.name}-${project.version}.jar")
-        from(configurations.runtimeClasspath.get().map { if (it.isDirectory) it else zipTree(it) })
+    processResources { filesMatching("paper-plugin.yml") { expand("version" to project.version) } }
+    jar { enabled = false }
+    build { dependsOn(shadowJar) }
+    shadowJar {
+        archiveClassifier.set(null as String?)
+        archiveFileName.set("${project.name}-${project.version}.jar")
+        relocate("dev.dejvokep.boostedyaml", "tr.s42.tradecycler")
+        minimize()
     }
 }
+
 kotlin {
     jvmToolchain(21)
 }
