@@ -1,7 +1,7 @@
 # TradeCycle 
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/S42YT/TradeCycle/Java%20CI%20with%20Gradle?style=for-the-badge) ![GitHub release](https://img.shields.io/github/v/release/S42YT/TradeCycle?style=for-the-badge)
 
-### A [Paper](https://github.com/PaperMC/Paper) only plugin written in Kotlin to cycle through Villager trades. Inspired by [henkelmax](https://modrinth.com/user/henkelmax)'s mod [Trade Cycling](https://modrinth.com/mod/trade-cycling).
+### A [Paper](https://github.com/PaperMC/Paper) only plugin written in Kotlin to cycle through Villager trades from UI. Inspired by [henkelmax](https://modrinth.com/user/henkelmax)'s mod [Trade Cycling](https://modrinth.com/mod/trade-cycling).
 
 <hr>
 
