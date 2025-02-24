@@ -1,0 +1,11 @@
+# DO NOT TOUCH UNLESS YOU KNOW WHAT YOU ARE DOING!
+config-version: 1.0
+
+strategy:
+  - KEYBOARD
+# - SHIFT_INTERACT
+
+messages:
+  NO_PROFESSION: "&cCannot cycle trades - villager has no job!"
+  VILLAGER_LOCKED: "&cCannot cycle trades - villager has been traded with!"
+  CYCLE_SUCCESS: "&aTrades cycled!"

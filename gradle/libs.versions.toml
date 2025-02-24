@@ -1,0 +1,15 @@
+[versions]
+shadow = "8.1.8"
+jvm = "2.0.21"
+
+# Dependencies
+paper = "1.21.4-R0.1-SNAPSHOT"
+boosted-yaml = "1.3.6"
+
+[libraries]
+stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib", version.ref = "jvm" }
+paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
+boosted-yaml = { group = "dev.dejvokep", name = "boosted-yaml", version.ref = "boosted-yaml" }
+
+[plugins]
+shadow = { id = "io.github.goooler.shadow", version.ref = "shadow" }
