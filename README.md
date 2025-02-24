@@ -69,11 +69,15 @@ Feel free to open a issue or a pull request, I will be happy to help you!
 
 ### Platforms to download it on
 
+[SpigotMC](https://www.spigotmc.org/resources/trade-cyle.122805/
+)
+
 [Modrinth](https://modrinth.com/plugin/tradecycle)
 
 [Paper Hangar](https://hangar.papermc.io/S42yt/TradeCycle)
 
 [S42.site (My Page)](https://s42.site/shop)
+
 
 ## Contributers :D
 
