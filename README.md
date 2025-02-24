@@ -1,84 +1,36 @@
-# Trade Cycle
+# TradeCycle 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/S42YT/TradeCycle/Java%20CI%20with%20Gradle?style=for-the-badge) ![GitHub release](https://img.shields.io/github/v/release/S42YT/TradeCycle?style=for-the-badge)
 
-### This Paper plugin is inspired by the mod [Trade Cycling](https://modrinth.com/mod/trade-cycling)
+### A [Paper](https://github.com/PaperMC/Paper) only plugin written in Kotlin to cycle through Villager trades. Inspired by [henkelmax](https://modrinth.com/user/henkelmax)'s mod [Trade Cycling](https://modrinth.com/mod/trade-cycling).
 
-**NOTE**: This plugin only works with Paper 1.21.4 and above.
+<hr>
 
-### How to use
+# Download
+You can either download the plugin from the latest release or download it from the following sources:
+- [Spigot](https://www.spigotmc.org/resources/tradecycle.122805/)
+- [Modrinth](https://modrinth.com/plugin/tradecycle)
+- [Hangar](https://hangar.papermc.io/S42yt/TradeCycle)
 
-1. Download the plugin from the latest release or build it yourself with:
+# Features
+There are two variants to cycle through trades:
+1. **Press F (default)**: Press the button associated with swapping the items to your offhand.
+2. **Shift Right Click**: Shift right-click on the villager to cycle through trades. However, this variant is disabled by default, have a look at our [#Config](#Config) section to enable it.
 
-```sh
-./gradlew build
-```
-
-2. Put the plugin in your server's `plugins` folder.
-
-3. Thats it !
-
-### How it works
-
-You shift Right Click or press F [(look at config)](#Config) a Villager with any item to cycle the trade!
 <img src="assets/cycle_trade.png" alt="cycle_trade" width="500"/>
 
-When you already Traded with a Villiger, you cant cycle the trade anymore.
+### 🚨 Note: If a villager has no profession or has been traded with, you cannot cycle through trades.
 <img src="assets/trade_cycled.png" alt="cant_cycle_trade" width="500"/>
 
-## Config
-
-There are 2 Methods to Cycle Trades:
-
-Shift Right Click and F Button Press
-
-Which one to use you can config in the Config.yml like this:
-
+# Config
+You can configure which method (or both) should be used to cycle through trades:
 ```yaml
 strategy:
   - KEYBOARD
 # - SHIFT_INTERACT
 ```
+'#' in front of a method will disable it.
 
-That with the sharp(#) in front of it is deactivated and wont work.
-You can use both at once for Bedrock Compatibility!
-
-Keyboard = F Button Press
-
-Shift_Interact = Shift Right Click
-
-Also you can config which Message in which state show up:
-
-```yaml
-messages:
-  NO_PROFESSION: "&cCannot cycle trades - villager has no job!"
-  VILLAGER_LOCKED: "&cCannot cycle trades - villager has been traded with!"
-  CYCLE_SUCCESS: "&aTrades cycled!"
-```
-
-All messages need to be filled in !!!
-When you have a Problem you can open a Issue and i will look into your Problem.
-
-**WARNING**: ONLY CONFIGURE THE YAML IF YOU KNOW WHAT YOU ARE DOING!
-
-### License
-
-Its a MIT License more infos in the [LICENSE](LICENSE) file.
-
-### Contributing
-
-Feel free to open a issue or a pull request, I will be happy to help you!
-
-### Platforms to download it on
-
-[SpigotMC](https://www.spigotmc.org/resources/trade-cyle.122805/
-)
-
-[Modrinth](https://modrinth.com/plugin/tradecycle)
-
-[Paper Hangar](https://hangar.papermc.io/S42yt/TradeCycle)
-
-[S42.site (My Page)](https://s42.site/shop)
-
-
-## Contributers :D
+# Contributing 🩷
+Feel free to open an issue or a pull request, I will be happy to help you! Special thanks to every contributor of this project:
 
 - [Tamikaschu](https://github.com/tamikaschu)
