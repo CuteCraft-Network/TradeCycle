@@ -16,10 +16,10 @@ There are two variants to cycle through trades:
 1. **Press F (default)**: Press the button associated with swapping the items to your offhand.
 2. **Shift Right Click**: Shift right-click on the villager to cycle through trades. However, this variant is disabled by default, have a look at our [#Config](#Config) section to enable it.
 
-<img src="assets/cycle_trade.png" alt="cycle_trade" width="500"/>
+<img src="assets/cycle_success.gif" alt="cycle_trade" width="500"/>
 
 ### 🚨 Note: If a villager has no profession or has been traded with, you cannot cycle through trades.
-<img src="assets/trade_cycled.png" alt="cant_cycle_trade" width="500"/>
+<img src="assets/villager_locked.png" alt="cant_cycle_trade" width="500"/>
 
 # Config
 You can configure which method (or both) should be used to cycle through trades:
