@@ -10,6 +10,7 @@ You can either download the plugin from the latest release or download it from t
 - [Spigot](https://www.spigotmc.org/resources/tradecycle.122805/)
 - [Modrinth](https://modrinth.com/plugin/tradecycle)
 - [Hangar](https://hangar.papermc.io/S42yt/TradeCycle)
+- [CurseForge](https://www.curseforge.com/minecraft/bukkit-plugins/tradecycle)
 
 # Features
 There are two variants to cycle through trades:
