@@ -2,5 +2,5 @@ name: TradeCycler
 version: "${version}"
 api-version: '1.21.4'
 authors: [ S42, Tamikaschu ]
-description: Cycles villager trades when pressed a configured button.
+description: Cycles Villager trades when from UI.
 main: tr.s42.tradecycler.TradeCyclerPlugin
