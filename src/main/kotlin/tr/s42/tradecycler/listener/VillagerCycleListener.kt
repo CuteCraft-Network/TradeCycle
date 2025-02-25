@@ -32,12 +32,12 @@ class VillagerCycleListener(private val tradeCycleService: TradeCycleService) : 
         player.openInventory(inventoryView)
 
         Sound.UI_BUTTON_CLICK.play(player)
-        tradeCycleService.sendMessage(player, "CYCLE_SUCCESS")
+        tradeCycleService.sendActionBar(player, "CYCLE_SUCCESS")
     }
 
     private fun sendFailureMessage(player: Player, messageKey: String) {
         Sound.ENTITY_VILLAGER_NO.play(player)
-        tradeCycleService.sendMessage(player, messageKey)
+        tradeCycleService.sendActionBar(player, messageKey)
     }
 
 }

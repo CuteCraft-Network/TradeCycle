@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "tr.s42.tradecycler"
-version = "1.2-SNAPSHOT"
+version = "1.3"
 
 repositories {
     mavenCentral()
@@ -28,6 +28,7 @@ tasks {
         archiveClassifier.set(null as String?)
         archiveFileName.set("${project.name}-${project.version}.jar")
         relocate("dev.dejvokep.boostedyaml", "tr.s42.tradecycler")
+        exclude("META-INF/**")
         minimize()
     }
 }

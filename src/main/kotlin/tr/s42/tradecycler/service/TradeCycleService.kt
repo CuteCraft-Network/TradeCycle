@@ -4,10 +4,20 @@ import dev.dejvokep.boostedyaml.YamlDocument
 import dev.dejvokep.boostedyaml.route.Route
 import org.bukkit.entity.Player
 import org.bukkit.entity.Villager
+import org.bukkit.event.Listener
+import tr.s42.tradecycler.strategy.KeyboardStrategy
+import tr.s42.tradecycler.strategy.ShiftInteractStrategy
 
 class TradeCycleService(private val config: YamlDocument) {
 
-    fun sendMessage(player: Player, messageKey: String) {
+    companion object {
+        val strategies: Map<String, Listener> = mapOf(
+            "KEYBOARD" to KeyboardStrategy(),
+            "SHIFT_INTERACT" to ShiftInteractStrategy()
+        )
+    }
+
+    fun sendActionBar(player: Player, messageKey: String) {
         val message: String = config.getOptionalString(Route.from("messages", messageKey)).orElseThrow()
         player.sendActionBar(MessageService.toComponent(message))
     }
