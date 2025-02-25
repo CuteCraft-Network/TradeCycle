@@ -9,11 +9,14 @@ import dev.dejvokep.boostedyaml.settings.updater.UpdaterSettings
 import java.io.File
 import java.io.InputStream
 
-object ConfigService {
+class ConfigService(
+    private val path: File,
+    private val classLoader: ClassLoader
+) {
 
-    fun createConfig(name: String, path: File): YamlDocument {
+    fun createConfig(name: String): YamlDocument {
         val resourceStream: InputStream =
-            this.javaClass.classLoader.getResourceAsStream("$name.yml")
+            classLoader.getResourceAsStream("$name.yml")
                 ?: throw IllegalArgumentException(
                     "Resource '$name.yml' not found in plugin resources."
                 )
