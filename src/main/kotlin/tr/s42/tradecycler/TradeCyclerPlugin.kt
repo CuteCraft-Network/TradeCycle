@@ -29,13 +29,13 @@ class TradeCyclerPlugin : JavaPlugin() {
 
     @Suppress("UnstableApiUsage")
     private fun checkForUpdates() {
-        UpdateCheckTask { version ->
-            if (pluginMeta.version != version) {
-                logger.warning("A new version of TradeCycler is available: $version")
+        UpdateCheckTask { latestVersion ->
+            val currentVersion = pluginMeta.version
+            if (currentVersion != latestVersion) {
+                logger.warning("A new version of TradeCycler is available: $latestVersion. You are using version: $currentVersion")
+                logger.warning("Download the latest version at: https://www.spigotmc.org/resources/tradecycle.122805/")
                 return@UpdateCheckTask
             }
-
-            logger.info("TradeCycler is up to date.")
         }.runTaskAsynchronously(this)
     }
 
