@@ -11,7 +11,6 @@ You can either download the plugin from the latest release or download it from t
 - [Modrinth](https://modrinth.com/plugin/tradecycle)
 - [Hangar](https://hangar.papermc.io/S42yt/TradeCycle)
 - [CurseForge](https://www.curseforge.com/minecraft/bukkit-plugins/tradecycle)
-- [S42.site](https://s42.site/)
 
 # Features
 There are two variants to cycle through trades:
