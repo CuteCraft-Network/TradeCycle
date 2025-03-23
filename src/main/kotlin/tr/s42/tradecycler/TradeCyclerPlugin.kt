@@ -45,7 +45,7 @@ class TradeCyclerPlugin : JavaPlugin() {
         }
 
         val pluginManager: PluginManager = server.pluginManager
-        pluginManager.registerEvents(VillagerCycleListener(service), plugin)
+        pluginManager.registerEvents(VillagerCycleListener(service, this), plugin)
         strategies.forEach { pluginManager.registerEvents(it, plugin) }
     }
 
