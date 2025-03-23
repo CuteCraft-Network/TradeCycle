@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "tr.s42.tradecycler"
-version = "1.3"
+version = "1.4"
 
 repositories {
     mavenCentral()
