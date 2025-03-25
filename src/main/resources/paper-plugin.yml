@@ -1,6 +1,6 @@
-name: TradeCycler
+name: TradeCycle
 version: "${version}"
 api-version: '1.21.4'
 authors: [ S42, Tamikaschu ]
-description: Cycles Villager trades when from UI.
-main: tr.s42.tradecycler.TradeCyclerPlugin
+description: Cycles through Villager trades from UI.
+main: tr.s42.tradecycle.TradeCyclePlugin
