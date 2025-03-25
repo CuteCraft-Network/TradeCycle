@@ -1,1 +1,1 @@
-rootProject.name = "tradecycler"
+rootProject.name = "tradecycle"

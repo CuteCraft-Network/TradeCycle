@@ -1,4 +1,4 @@
-package tr.s42.tradecycler.event
+package tr.s42.tradecycle.event
 
 import org.bukkit.entity.Player
 import org.bukkit.entity.Villager

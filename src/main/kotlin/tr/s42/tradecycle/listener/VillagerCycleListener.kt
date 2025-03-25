@@ -1,4 +1,4 @@
-package tr.s42.tradecycler.listener
+package tr.s42.tradecycle.listener
 
 import org.bukkit.Bukkit
 import org.bukkit.Sound
@@ -7,14 +7,14 @@ import org.bukkit.entity.Villager
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.inventory.MenuType
-import tr.s42.tradecycler.TradeCyclerPlugin
-import tr.s42.tradecycler.event.VillagerCycleTradeEvent
-import tr.s42.tradecycler.service.TradeCycleService
-import tr.s42.tradecycler.util.SoundUtil.play
+import tr.s42.tradecycle.TradeCyclePlugin
+import tr.s42.tradecycle.event.VillagerCycleTradeEvent
+import tr.s42.tradecycle.service.TradeCycleService
+import tr.s42.tradecycle.util.SoundUtil.play
 
 class VillagerCycleListener(
     private val tradeCycleService: TradeCycleService,
-    private val plugin: TradeCyclerPlugin
+    private val plugin: TradeCyclePlugin
 ) : Listener {
 
     @EventHandler

@@ -1,4 +1,4 @@
-package tr.s42.tradecycler.service
+package tr.s42.tradecycle.service
 
 import dev.dejvokep.boostedyaml.YamlDocument
 import dev.dejvokep.boostedyaml.dvs.versioning.BasicVersioning

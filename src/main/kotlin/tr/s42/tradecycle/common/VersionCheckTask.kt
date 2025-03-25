@@ -1,4 +1,4 @@
-package tr.s42.tradecycler.common
+package tr.s42.tradecycle.common
 
 import org.bukkit.scheduler.BukkitRunnable
 import java.net.URI

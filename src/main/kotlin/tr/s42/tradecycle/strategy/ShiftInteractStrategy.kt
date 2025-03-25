@@ -1,10 +1,10 @@
-package tr.s42.tradecycler.strategy
+package tr.s42.tradecycle.strategy
 
 import org.bukkit.entity.Villager
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerInteractEntityEvent
-import tr.s42.tradecycler.event.VillagerCycleTradeEvent
+import tr.s42.tradecycle.event.VillagerCycleTradeEvent
 
 class ShiftInteractStrategy : Listener {
 
