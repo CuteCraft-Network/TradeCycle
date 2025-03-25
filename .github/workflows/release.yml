@@ -33,11 +33,19 @@ jobs:
         run: |
           latest_tag=$(git tag -l 'v*' | sort -V | tail -n1)
           if [ -z "$latest_tag" ]; then
-            echo "version=v1.0" >> $GITHUB_OUTPUT
+            echo "version=v1.4.0" >> $GITHUB_OUTPUT
           else
             current_version=$(echo $latest_tag | sed 's/v//')
-            next_version=$(echo $current_version | awk -F. '{print $1"."$2+1}')
-            echo "version=v$next_version" >> $GITHUB_OUTPUT
+            major=$(echo $current_version | cut -d. -f1)
+            minor=$(echo $current_version | cut -d. -f2)
+            
+            if [[ $current_version == *"."*"."* ]]; then
+              patch=$(echo $current_version | cut -d. -f3)
+              new_patch=$((patch + 1))
+              echo "version=v$major.$minor.$new_patch" >> $GITHUB_OUTPUT
+            else
+              echo "version=v$major.$minor.0" >> $GITHUB_OUTPUT
+            fi
           fi
 
       - name: Create Release
