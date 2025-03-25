@@ -5,7 +5,8 @@ import dev.dejvokep.boostedyaml.route.Route
 import org.bukkit.event.Listener
 import org.bukkit.plugin.PluginManager
 import org.bukkit.plugin.java.JavaPlugin
-import tr.s42.tradecycler.common.UpdateCheckTask
+import tr.s42.tradecycler.common.ComparableVersion
+import tr.s42.tradecycler.common.VersionCheckTask
 import tr.s42.tradecycler.listener.VillagerCycleListener
 import tr.s42.tradecycler.service.ConfigService
 import tr.s42.tradecycler.service.TradeCycleService
@@ -29,12 +30,12 @@ class TradeCyclerPlugin : JavaPlugin() {
 
     @Suppress("UnstableApiUsage")
     private fun checkForUpdates() {
-        UpdateCheckTask { latestVersion ->
-            val currentVersion = pluginMeta.version
-            if (currentVersion != latestVersion) {
-                logger.warning("A new version of TradeCycler is available: $latestVersion. You are using version: $currentVersion")
-                logger.warning("Download the latest version at: https://www.spigotmc.org/resources/tradecycle.122805/")
-                return@UpdateCheckTask
+        VersionCheckTask { latestVersion ->
+            val currentVersion = ComparableVersion(pluginMeta.version)
+            if (currentVersion < latestVersion) {
+                logger.warning("A new version of TradeCycler is available: ${latestVersion.rawVersion}. You are using version: ${currentVersion.rawVersion}")
+                logger.warning("Download the latest version at: ${VersionCheckTask.RESOURCE}")
+                return@VersionCheckTask
             }
         }.runTaskAsynchronously(this)
     }
