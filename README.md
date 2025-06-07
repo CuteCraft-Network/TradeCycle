@@ -17,7 +17,7 @@ You can either download the plugin from the latest release or download it from t
 
 # Features
 There are two variants to cycle through trades:
-1. **Press F (default)**: Press the button associated with swapping the items to your offhand (**IMPORTANT**: The Cursor needs to be in the Inventorydue to Minecraft limitations).
+1. **Press F (default)**: Press the button associated with swapping the items to your offhand (**IMPORTANT**: The Cursor needs to be in the Inventory due to Minecraft limitations).
 2. **Shift Right Click**: Shift right-click on the villager to cycle through trades. However, this variant is disabled by default, have a look at our [#Config](#Config) section to enable it.
 
 <img src="assets/cycle_success.gif" alt="cycle_trade" width="500"/>
