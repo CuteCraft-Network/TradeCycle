@@ -2,9 +2,6 @@ plugins {
     kotlin("jvm").version(libs.versions.jvm)
 }
 
-group = "net.cutecraft.tradecycle"
-version = "1.5.0"
-
 repositories {
     mavenCentral()
     maven {
@@ -14,8 +11,13 @@ repositories {
 }
 
 dependencies {
+    implementation(project(":core"))
     implementation(libs.stdlib)
     compileOnly(libs.paper)
+}
+
+tasks {
+    processResources { filesMatching("paper-plugin.yml") { expand("version" to project.version) } }
 }
 
 kotlin {
