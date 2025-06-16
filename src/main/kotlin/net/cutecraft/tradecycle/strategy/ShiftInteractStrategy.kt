@@ -1,10 +1,10 @@
-package tr.s42.tradecycle.strategy
+package net.cutecraft.tradecycle.strategy
 
 import org.bukkit.entity.Villager
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerInteractEntityEvent
-import tr.s42.tradecycle.event.VillagerCycleTradeEvent
+import net.cutecraft.tradecycle.event.VillagerCycleTradeEvent
 
 class ShiftInteractStrategy : Listener {
 

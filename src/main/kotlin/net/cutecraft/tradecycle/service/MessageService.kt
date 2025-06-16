@@ -1,4 +1,4 @@
-package tr.s42.tradecycle.service
+package net.cutecraft.tradecycle.service
 
 import net.kyori.adventure.text.Component
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer

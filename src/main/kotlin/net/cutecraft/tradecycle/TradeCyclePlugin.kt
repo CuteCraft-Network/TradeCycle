@@ -1,16 +1,16 @@
-package tr.s42.tradecycle
+package net.cutecraft.tradecycle
 
 import dev.dejvokep.boostedyaml.YamlDocument
 import dev.dejvokep.boostedyaml.route.Route
 import org.bukkit.event.Listener
 import org.bukkit.plugin.PluginManager
 import org.bukkit.plugin.java.JavaPlugin
-import tr.s42.tradecycle.common.ComparableVersion
-import tr.s42.tradecycle.common.VersionCheckTask
-import tr.s42.tradecycle.listener.VillagerCycleListener
-import tr.s42.tradecycle.service.ConfigService
-import tr.s42.tradecycle.service.TradeCycleService
-import tr.s42.tradecycle.service.TradeCycleService.Companion.strategies
+import net.cutecraft.tradecycle.common.ComparableVersion
+import net.cutecraft.tradecycle.common.VersionCheckTask
+import net.cutecraft.tradecycle.listener.VillagerCycleListener
+import net.cutecraft.tradecycle.service.ConfigService
+import net.cutecraft.tradecycle.service.TradeCycleService
+import net.cutecraft.tradecycle.service.TradeCycleService.Companion.strategies
 
 class TradeCyclePlugin : JavaPlugin() {
 

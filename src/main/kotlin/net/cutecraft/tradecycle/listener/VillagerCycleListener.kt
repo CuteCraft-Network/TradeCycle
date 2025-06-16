@@ -1,4 +1,4 @@
-package tr.s42.tradecycle.listener
+package net.cutecraft.tradecycle.listener
 
 import org.bukkit.Bukkit
 import org.bukkit.Sound
@@ -7,10 +7,10 @@ import org.bukkit.entity.Villager
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.inventory.MenuType
-import tr.s42.tradecycle.TradeCyclePlugin
-import tr.s42.tradecycle.event.VillagerCycleTradeEvent
-import tr.s42.tradecycle.service.TradeCycleService
-import tr.s42.tradecycle.util.SoundUtil.play
+import net.cutecraft.tradecycle.TradeCyclePlugin
+import net.cutecraft.tradecycle.event.VillagerCycleTradeEvent
+import net.cutecraft.tradecycle.service.TradeCycleService
+import net.cutecraft.tradecycle.util.SoundUtil.play
 
 class VillagerCycleListener(
     private val tradeCycleService: TradeCycleService,

@@ -1,4 +1,4 @@
-package tr.s42.tradecycle.util
+package net.cutecraft.tradecycle.util
 
 import org.bukkit.Sound
 import org.bukkit.entity.Player

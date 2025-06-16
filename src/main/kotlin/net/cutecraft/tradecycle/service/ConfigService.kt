@@ -1,4 +1,4 @@
-package tr.s42.tradecycle.service
+package net.cutecraft.tradecycle.service
 
 import dev.dejvokep.boostedyaml.YamlDocument
 import dev.dejvokep.boostedyaml.dvs.versioning.BasicVersioning

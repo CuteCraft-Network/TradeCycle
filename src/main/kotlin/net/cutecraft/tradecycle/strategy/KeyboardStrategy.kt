@@ -1,4 +1,4 @@
-package tr.s42.tradecycle.strategy
+package net.cutecraft.tradecycle.strategy
 
 import org.bukkit.entity.Player
 import org.bukkit.entity.Villager
@@ -8,7 +8,7 @@ import org.bukkit.event.inventory.ClickType
 import org.bukkit.event.inventory.InventoryClickEvent
 import org.bukkit.inventory.Inventory
 import org.bukkit.inventory.MerchantInventory
-import tr.s42.tradecycle.event.VillagerCycleTradeEvent
+import net.cutecraft.tradecycle.event.VillagerCycleTradeEvent
 
 class KeyboardStrategy : Listener {
 

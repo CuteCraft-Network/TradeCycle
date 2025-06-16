@@ -3,8 +3,8 @@ plugins {
     alias(libs.plugins.shadow)
 }
 
-group = "tr.s42.tradecycle"
-version = "1.4.1"
+group = "net.cutecraft.tradecycle"
+version = "1.4.2"
 
 repositories {
     mavenCentral()
@@ -27,7 +27,7 @@ tasks {
     shadowJar {
         archiveClassifier.set(null as String?)
         archiveFileName.set("${project.name}-${project.version}.jar")
-        relocate("dev.dejvokep.boostedyaml", "tr.s42.tradecycle")
+        relocate("dev.dejvokep.boostedyaml", "net.cutecraft.tradecycle")
         exclude("META-INF/**")
         minimize()
     }

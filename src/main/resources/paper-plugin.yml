@@ -1,6 +1,6 @@
 name: TradeCycle
 version: "${version}"
-api-version: '1.21.4'
+main: net.cutecraft.tradecycle.TradeCyclePlugin
 authors: [ S42, Tamikaschu ]
 description: Cycles through Villager trades from UI.
-main: tr.s42.tradecycle.TradeCyclePlugin
+api-version: '1.21.4'

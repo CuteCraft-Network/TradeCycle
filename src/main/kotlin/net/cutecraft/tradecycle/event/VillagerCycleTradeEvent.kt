@@ -1,4 +1,4 @@
-package tr.s42.tradecycle.event
+package net.cutecraft.tradecycle.event
 
 import org.bukkit.entity.Player
 import org.bukkit.entity.Villager

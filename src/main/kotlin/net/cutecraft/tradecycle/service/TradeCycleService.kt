@@ -1,12 +1,12 @@
-package tr.s42.tradecycle.service
+package net.cutecraft.tradecycle.service
 
 import dev.dejvokep.boostedyaml.YamlDocument
 import dev.dejvokep.boostedyaml.route.Route
 import org.bukkit.entity.Player
 import org.bukkit.entity.Villager
 import org.bukkit.event.Listener
-import tr.s42.tradecycle.strategy.KeyboardStrategy
-import tr.s42.tradecycle.strategy.ShiftInteractStrategy
+import net.cutecraft.tradecycle.strategy.KeyboardStrategy
+import net.cutecraft.tradecycle.strategy.ShiftInteractStrategy
 
 class TradeCycleService(private val config: YamlDocument) {
 

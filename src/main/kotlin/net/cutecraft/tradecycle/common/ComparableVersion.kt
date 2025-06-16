@@ -1,4 +1,4 @@
-package tr.s42.tradecycle.common
+package net.cutecraft.tradecycle.common
 
 data class ComparableVersion(val rawVersion: String) : Comparable<ComparableVersion> {
 
