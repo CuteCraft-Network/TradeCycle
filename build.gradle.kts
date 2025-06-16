@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm").version(libs.versions.jvm)
+    id("com.gradleup.shadow") version "8.3.3" apply false
 }
 
 group = "net.cutecraft.tradecycle"
@@ -20,4 +21,10 @@ dependencies {
 
 kotlin {
     jvmToolchain(21)
+}
+
+subprojects {
+    apply(plugin = "java")
+    
+    version = rootProject.version
 }

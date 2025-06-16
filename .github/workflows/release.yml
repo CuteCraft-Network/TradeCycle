@@ -2,73 +2,55 @@ name: Release
 
 on:
   push:
-    branches:
-      - master
+    tags:
+      - 'v*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
+    
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Set up JDK 21
-        uses: actions/setup-java@v4
-        with:
-          distribution: 'temurin'
-          java-version: '21'
-
-      - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
-
-      - name: Build with Gradle
-        run: ./gradlew build
-
-      - name: Get latest tag
-        id: get_latest_tag
-        run: |
-          latest_tag=$(git tag -l 'v*' | sort -V | tail -n1)
-          if [ -z "$latest_tag" ]; then
-            echo "version=v1.4.0" >> $GITHUB_OUTPUT
-          else
-            current_version=$(echo $latest_tag | sed 's/v//')
-            major=$(echo $current_version | cut -d. -f1)
-            minor=$(echo $current_version | cut -d. -f2)
-            
-            if [[ $current_version == *"."*"."* ]]; then
-              patch=$(echo $current_version | cut -d. -f3)
-              new_patch=$((patch + 1))
-              echo "version=v$major.$minor.$new_patch" >> $GITHUB_OUTPUT
-            else
-              echo "version=v$major.$minor.0" >> $GITHUB_OUTPUT
-            fi
-          fi
-
-      - name: Create Release
-        uses: softprops/action-gh-release@v1
-        with:
-          tag_name: ${{ steps.get_latest_tag.outputs.version }}
-          name: Release ${{ steps.get_latest_tag.outputs.version }}
-          draft: true
-          body: |
-            # CHANGELOG ${{ steps.get_latest_tag.outputs.version }}
-            
-            ## BUGS:
-            -
-            -
-            
-            ## FEATURES:
-            -
-            -
-            
-            ## CONTRIBUTERS:
-            -
-            -
-          files: |
-            build/libs/*.jar
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@v4
+    
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        
+    - name: Setup Gradle
+      uses: gradle/gradle-build-action@v3
+      
+    - name: Build with Gradle
+      run: ./gradlew build
+      
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        draft: false
+        prerelease: false
+        
+    - name: Upload Paper JAR
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./build/libs/TradeCycle-1.5.0-paper.jar
+        asset_name: TradeCycle-1.5.0-paper.jar
+        asset_content_type: application/java-archive
+        
+    - name: Upload Spigot JAR
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./build/libs/TradeCycle-1.5.0-spigot.jar
+        asset_name: TradeCycle-1.5.0-spigot.jar
+        asset_content_type: application/java-archive

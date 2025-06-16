@@ -1,5 +1,6 @@
 plugins {
     kotlin("jvm").version(libs.versions.jvm)
+    id("com.gradleup.shadow") version "8.3.3"
 }
 
 repositories {
@@ -17,7 +18,28 @@ dependencies {
 }
 
 tasks {
-    processResources { filesMatching("plugin.yml") { expand("version" to project.version) } }
+    processResources { 
+        filesMatching("plugin.yml") { 
+            expand("version" to project.version) 
+        } 
+    }
+    
+    shadowJar {
+        archiveBaseName.set("TradeCycle")
+        archiveVersion.set(project.version.toString())
+        archiveClassifier.set("spigot")
+        destinationDirectory.set(rootProject.layout.buildDirectory.dir("libs"))
+        
+        relocate("kotlin", "net.cutecraft.tradecycle.libs.kotlin")
+    }
+    
+    jar {
+        enabled = false
+    }
+    
+    build {
+        dependsOn(shadowJar)
+    }
 }
 
 kotlin {
