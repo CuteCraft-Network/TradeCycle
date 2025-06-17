@@ -83,3 +83,30 @@ jobs:
             else
               echo "version=v$major.$minor.0" >> $GITHUB_OUTPUT
             fi
+          fi
+
+      - name: Create Auto-increment Release
+        if: github.ref == 'refs/heads/master'
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ steps.get_latest_tag.outputs.version }}
+          name: Release ${{ steps.get_latest_tag.outputs.version }}
+          draft: true
+          body: |
+            # CHANGELOG ${{ steps.get_latest_tag.outputs.version }}
+            
+            ## BUGS:
+            -
+            -
+            
+            ## FEATURES:
+            -
+            -
+            
+            ## CONTRIBUTERS:
+            -
+            -
+          files: |
+            build/libs/*.jar
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
