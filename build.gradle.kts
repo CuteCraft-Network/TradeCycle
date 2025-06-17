@@ -1,38 +1,52 @@
+import com.github.jengelman.gradle.plugins.shadow.ShadowPlugin
+
 plugins {
     kotlin("jvm").version(libs.versions.jvm)
     alias(libs.plugins.shadow)
+    id("java")
 }
 
-group = "tr.s42.tradecycle"
-version = "1.4.1"
+group = "net.cutecraft"
+version = "1.5.0"
 
-repositories {
-    mavenCentral()
-    maven {
-        name = "papermc"
-        url = uri("https://repo.papermc.io/repository/maven-public/")
+repositories { mavenCentral() }
+
+val stdlib: String = libs.stdlib.get().toString()
+subprojects {
+    version = rootProject.version
+    apply {
+        apply(plugin = "org.jetbrains.kotlin.jvm")
+        plugin<JavaPlugin>()
+        plugin<JavaLibraryPlugin>()
+        plugin<ShadowPlugin>()
+    }
+    repositories {
+        mavenCentral()
+        maven(uri("https://repo.papermc.io/repository/maven-public/"))
+        maven(uri("https://hub.spigotmc.org/nexus/content/repositories/snapshots"))
+    }
+    kotlin {
+        jvmToolchain(21)
+    }
+    if (project.name == "core") {
+        return@subprojects
+    }
+    tasks {
+        jar { enabled = false }
+        build { dependsOn(shadowJar) }
+        shadowJar {
+            archiveBaseName.set(rootProject.name)
+            archiveVersion.set(project.version.toString())
+            archiveClassifier.set(project.name)
+            destinationDirectory.set(rootProject.layout.buildDirectory.dir("libs"))
+            relocate("kotlin", "net.cutecraft.libs.kotlin")
+            minimize()
+        }
+    }
+    dependencies {
+        implementation(project(":core"))
+        implementation(stdlib)
     }
 }
 
-dependencies {
-    implementation(libs.stdlib)
-    implementation(libs.boosted.yaml)
-    compileOnly(libs.paper)
-}
-
-tasks {
-    processResources { filesMatching("paper-plugin.yml") { expand("version" to project.version) } }
-    jar { enabled = false }
-    build { dependsOn(shadowJar) }
-    shadowJar {
-        archiveClassifier.set(null as String?)
-        archiveFileName.set("${project.name}-${project.version}.jar")
-        relocate("dev.dejvokep.boostedyaml", "tr.s42.tradecycle")
-        exclude("META-INF/**")
-        minimize()
-    }
-}
-
-kotlin {
-    jvmToolchain(21)
-}
+tasks.jar { enabled = false }
