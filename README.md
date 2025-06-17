@@ -3,17 +3,17 @@
 
 [![Spigot Downloads](https://img.shields.io/spiget/downloads/122805?label=spigot%20downloads&style=for-the-badge&color=ee8917)](https://www.spigotmc.org/resources/tradecycle.122805/) [![Modrinth Downloads](https://img.shields.io/modrinth/dt/tradecycle?label=modrinth%20downloads&style=for-the-badge&color=5da545)](https://modrinth.com/plugin/tradecycle)
 
-### A [Paper](https://github.com/PaperMC/Paper) only plugin written in Kotlin to cycle through Villager trades from UI. Inspired by [henkelmax](https://modrinth.com/user/henkelmax)'s mod [Trade Cycling](https://modrinth.com/mod/trade-cycling).
+### A [Paper](https://github.com/PaperMC/Paper) and [Spigot](https://spigotmc.org) written in Kotlin to cycle through Villager trades from UI. Inspired by [henkelmax](https://modrinth.com/user/henkelmax)'s mod [Trade Cycling](https://modrinth.com/mod/trade-cycling).
 
 <hr>
 
 # Download
 You can either download the plugin from the latest release or download it from the following sources:
-- [Spigot](https://www.spigotmc.org/resources/tradecycle.122805/)
-- [Modrinth](https://modrinth.com/plugin/tradecycle)
-- [Hangar](https://hangar.papermc.io/S42yt/TradeCycle)
-- [CurseForge](https://www.curseforge.com/minecraft/bukkit-plugins/tradecycle)
-- [S42.site](https://s42.site/)
+- [Spigot](https://www.spigotmc.org/resources/tradecycle.122805/) - Spigot Version
+- [Modrinth](https://modrinth.com/plugin/tradecycle) - Paper and Spigot Version
+- [Hangar](https://hangar.papermc.io/S42yt/TradeCycle) - Paper Version
+- [CurseForge](https://www.curseforge.com/minecraft/bukkit-plugins/tradecycle) - Paper Version
+- [Github Relases](https://github.com/CuteCraft-Network/TradeCycle/releases/latest) - Paper and Spigot Version
 
 # Features
 There are two variants to cycle through trades:
@@ -33,6 +33,8 @@ strategy:
 # - SHIFT_INTERACT
 ```
 '#' in front of a method will disable it.
+
+The SHIFT_INTERACT was made with bedrock and Geyser in mind so you can also cycle trades on the bedrock edition. But it doesnt work in UI with this strategy.
 
 # Contributing 🩷
 Feel free to open an issue or a pull request, I will be happy to help you! Special thanks to every contributor of this project:
