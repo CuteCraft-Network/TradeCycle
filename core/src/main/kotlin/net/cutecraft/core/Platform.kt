@@ -21,6 +21,7 @@ class Platform(private val provider: PlatformProvider) {
 
         plugin.saveDefaultConfig()
         val config: FileConfiguration = plugin.config
+
         val service = TradeCycleService(provider.messageService, config)
         registerStrategies(service, config)
     }
@@ -42,7 +43,7 @@ class Platform(private val provider: PlatformProvider) {
         }
 
         val pluginManager: PluginManager = plugin.server.pluginManager
-        pluginManager.registerEvents(VillagerCycleListener(service, plugin), plugin)
+        pluginManager.registerEvents(VillagerCycleListener(service, provider.openInventoryViewFunction, plugin), plugin)
         strategies.forEach { pluginManager.registerEvents(it, plugin) }
     }
 

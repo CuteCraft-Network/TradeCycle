@@ -1,6 +1,7 @@
 package net.cutecraft.core.strategy
 
 import net.cutecraft.core.event.VillagerCycleTradeEvent
+import org.bukkit.Bukkit
 import org.bukkit.entity.Player
 import org.bukkit.entity.Villager
 import org.bukkit.event.EventHandler
@@ -9,7 +10,6 @@ import org.bukkit.event.inventory.ClickType
 import org.bukkit.event.inventory.InventoryClickEvent
 import org.bukkit.inventory.Inventory
 import org.bukkit.inventory.MerchantInventory
-import org.bukkit.Bukkit
 
 class KeyboardStrategy : Listener {
 

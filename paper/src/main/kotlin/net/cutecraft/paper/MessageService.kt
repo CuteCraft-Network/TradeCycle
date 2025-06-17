@@ -1,6 +1,6 @@
 package net.cutecraft.paper
 
-import net.cutecraft.core.common.IMessageService
+import net.cutecraft.core.service.IMessageService
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer
 import org.bukkit.entity.Player
 

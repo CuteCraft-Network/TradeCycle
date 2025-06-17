@@ -1,12 +1,12 @@
 package net.cutecraft.core.service
 
-import net.cutecraft.core.common.IMessageService
 import net.cutecraft.core.strategy.KeyboardStrategy
 import net.cutecraft.core.strategy.ShiftInteractStrategy
 import org.bukkit.configuration.file.FileConfiguration
 import org.bukkit.entity.Player
 import org.bukkit.entity.Villager
 import org.bukkit.event.Listener
+
 class TradeCycleService(
     private val messageService: IMessageService,
     private val config: FileConfiguration

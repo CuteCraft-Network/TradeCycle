@@ -9,16 +9,17 @@ import org.bukkit.entity.Player
 import org.bukkit.entity.Villager
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
-import org.bukkit.inventory.MenuType
+import org.bukkit.inventory.InventoryView
 import org.bukkit.plugin.Plugin
+import java.util.function.BiFunction
 
 class VillagerCycleListener(
     private val tradeCycleService: TradeCycleService,
+    private val openInventoryViewFunction: BiFunction<Villager, Player, InventoryView>,
     private val plugin: Plugin
 ) : Listener {
 
     @EventHandler
-    @Suppress("UnstableApiUsage")
     fun onVillagerCycleTradeEvent(event: VillagerCycleTradeEvent) {
         val villager: Villager = event.villager
         val player: Player = event.player
@@ -33,10 +34,8 @@ class VillagerCycleListener(
         }
 
         tradeCycleService.cycleTrade(villager)
-        
         Bukkit.getScheduler().runTask(plugin, Runnable {
-            val inventoryView = MenuType.MERCHANT.builder().merchant(villager).build(player)
-            player.openInventory(inventoryView)
+            player.openInventory(openInventoryViewFunction.apply(villager, player))
         })
 
         Sound.UI_BUTTON_CLICK.play(player)

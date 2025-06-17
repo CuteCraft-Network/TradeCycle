@@ -1,11 +1,11 @@
 package net.cutecraft.core.strategy
 
 import net.cutecraft.core.event.VillagerCycleTradeEvent
+import org.bukkit.Bukkit
 import org.bukkit.entity.Villager
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
 import org.bukkit.event.player.PlayerInteractEntityEvent
-import org.bukkit.Bukkit
 
 class ShiftInteractStrategy : Listener {
 

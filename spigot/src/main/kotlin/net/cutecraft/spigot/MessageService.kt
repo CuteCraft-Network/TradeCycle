@@ -1,6 +1,6 @@
 package net.cutecraft.spigot
 
-import net.cutecraft.core.common.IMessageService
+import net.cutecraft.core.service.IMessageService
 import net.md_5.bungee.api.ChatMessageType
 import net.md_5.bungee.api.chat.TextComponent
 import org.bukkit.ChatColor
@@ -12,5 +12,4 @@ class MessageService : IMessageService {
         val coloredMessage = ChatColor.translateAlternateColorCodes('&', message)
         player.spigot().sendMessage(ChatMessageType.ACTION_BAR, TextComponent(coloredMessage))
     }
-
 }

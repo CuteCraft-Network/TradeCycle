@@ -2,6 +2,4 @@ plugins {
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.8.0"
 }
 rootProject.name = "TradeCycle"
-include("core")
-include("paper")
-include("spigot")
+include("core", "paper", "spigot")

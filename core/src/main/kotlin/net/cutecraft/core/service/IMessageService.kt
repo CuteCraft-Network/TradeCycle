@@ -1,4 +1,4 @@
-package net.cutecraft.core.common
+package net.cutecraft.core.service
 
 import org.bukkit.entity.Player
 
